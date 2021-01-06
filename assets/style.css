@@ -1,0 +1,51 @@
+    /* Adjust profile picture margin on right by 20px so text doesn't touch it */
+    .profilePicture {
+        margin-right: 20px;
+    }
+
+    /* Changing text font and size */
+    .profileParagraph {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 16px;
+    }
+    
+    /* Making the navbar-brand (Eric Chen) bigger */
+    .navbar-brand {
+        font-size: 50px;
+        line-height: 60px;
+    }
+    
+    /* Make links in the navbar bigger and further from the top */
+    .nav-link {
+        font-size: 30px;
+        margin-top: 13px;
+    }
+    
+    /* Setting background image to marble background */
+    body {
+        background-image: url(./Background_Photo.jpg);
+    }
+    
+    /* set it to the left so it isn't center aligned */
+    .container {
+        margin-left: 0%;
+    }
+    
+    /* adjusting margins and size for Footer navbar icons for social media links */
+    .social-media-icon {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        width: 30px;
+        height: 30px;
+    }
+    
+    /* Main portfolio picture's size on About Me Page */
+    .Portfolio-Picture {
+        width: 350px;
+        height: 350px;
+    }
+    
+    /* Navbar color */
+    .bg-light {
+        background-color: #436e98!important;
+    }
