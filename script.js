@@ -15,23 +15,29 @@ $(function () {
             description: "Play a quick code quiz game to refresh your Javascript knowledge!",
             link: "https://ericchen96.github.io/Code_Quiz/"
         }
-    ]
-
+    ];
+    var projectSearchList = ["Marvel Hero Finder", "Weather Dashboard", "Code Quiz"];
+    for (var i = 0; i < projectSearchList.length; i++) {
+        projectSearchList[i] = projectSearchList[i].toLowerCase();
+    }
 
     $(".projectPortfolioButton").on("click", function () {
         console.log("hi");
     })
 
-    $(".projectSearchForm").on("submit", function(event) {
+    $(".projectSearchForm").on("submit", function (event) {
         event.preventDefault();
         var userInput = $(".projectSearchBar").val().trim().toLowerCase();
-        console.log(userInput);
+
         $(".projectSearchBar").val("");
+        if (projectSearchList.includes(userInput)) {
+            console.log(userInput);
+        }
 
         //https://anzelcapparelli.github.io/marvelHeroFinder/
         //https://ericchen96.github.io/Weather_Dashboard/
         //https://ericchen96.github.io/Code_Quiz/
 
     })
-    
+
 })
