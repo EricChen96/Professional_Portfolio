@@ -17,6 +17,8 @@ $(function () {
         }
     ];
     var projectSearchList = ["Marvel Hero Finder", "Weather Dashboard", "Code Quiz"];
+    //For autocomplete
+    var projectSearchListCapital = projectSearchList;
     for (var i = 0; i < projectSearchList.length; i++) {
         projectSearchList[i] = projectSearchList[i].toLowerCase();
     }
@@ -24,6 +26,12 @@ $(function () {
     $(".projectPortfolioButton").on("click", function () {
         console.log("hi");
     })
+
+    $(".projectSearchBar").autocomplete({
+        source: projectSearchListCapital,
+        autoFocus: true
+    });
+
 
     $(".projectSearchForm").on("submit", function (event) {
         event.preventDefault();
