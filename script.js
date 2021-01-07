@@ -23,13 +23,14 @@ $(function () {
         projectSearchList[i] = projectSearchList[i].toLowerCase();
     }
     var projectSearchHistory = [];
+    var lastSearched;
 
     function createProjectHistoryButtons() {
-        $(".recentSearchesButtonsList").empty();    
+        $(".recentSearchesButtonsList").empty();
         for (var i = 0; i < projectSearchHistory.length; i++) {
             var projectButton = $("<a>").text(projectSearchHistory[i]);
-            projectButton.attr("class","btn btn-primary col-12 mx-auto mt-2 searchHistoryButtons");
-            projectButton.attr("href","./assets/searchProjectScreen.html");
+            projectButton.attr("class", "btn btn-primary col-12 mx-auto mt-2 searchHistoryButtons");
+            projectButton.attr("href", "./assets/searchProjectScreen.html");
             $(".recentSearchesButtonsList").prepend(projectButton);
         }
     }
@@ -41,10 +42,28 @@ $(function () {
         if (storedProjectButtons !== null) {
             projectSearchHistory = storedProjectButtons;
         }
+        var storedLastSearched = sessionStorage.getItem("lastSearched");
+        if (storedProjectButtons !== null) {
+            projectSearchHistory = storedProjectButtons;
+        }
         createProjectHistoryButtons();
     }
 
-    $(".recentSearchesButtonsList").on("click",)
+    function saveLastSearched(project) {
+        lastSearched = project;
+        sessionStorage.setItem("lastSearched", lastSearched);
+    }
+
+    function changeProjectDisplay(searchInput) {
+        var indexTarget = projectSearchList.indexOf(searchInput);
+        $(".projectTitlePanel").text(projectList[indexTarget].title);
+        $(".projectDescriptionPanel").text(projectList[indexTarget].description);
+        $(".projectLinkPanel").text(projectList[indexTarget].link).attr("href", projectList[indexTarget].link);
+    }
+
+    $(".recentSearchesButtonsList").on("click", ".searchHistoryButtons", function () {
+        saveLastSearched($(this).text().toLowerCase());
+    })
 
     $(".projectSearchForm").on("submit", function (event) {
         event.preventDefault();
@@ -54,7 +73,7 @@ $(function () {
             changeProjectDisplay(userInput);
             var indexNum = projectSearchList.indexOf(userInput);
             if (!projectSearchHistory.includes(projectList[indexNum].title)) {
-                projectSearchHistory.push(projectList[indexNum].title); 
+                projectSearchHistory.push(projectList[indexNum].title);
                 createProjectHistoryButtons();
                 // console.log(projectSearchHistory[0]);
                 sessionStorage.setItem("projectHistory", JSON.stringify(projectSearchHistory));

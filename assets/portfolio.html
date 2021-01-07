@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./vendor/jquery-ui.min.css">
     <title>Eric Chen Portfolio</title>
 </head>
 
@@ -18,7 +19,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="../index.html">Eric Chen</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -40,42 +41,87 @@
 
     <!-- main section containing 6 pictures-->
     <main class="container">
-        <main class="row">
-            <main class="col-md-12">
-                <h1>
-                    Portfolio
-                </h1>
-            </main>
-        </main>
-        <section class="row mb-3">
-            <figure class="col-md-6">
-                <img src="./Cat_Picture.jpg" class="Portfolio-Picture .img-fluid" alt="My Cat" />
-            </figure>
-            <figure class="col-md-6">
-                <img src="https://i2.wp.com/www.geoawesomeness.com/wp-content/uploads/2017/09/Coding-Geospatial.jpg?resize=1152%2C768&ssl=1"
-                    class="Portfolio-Picture .img-fluid" alt="Coding" />
-            </figure>
-        </section>
-        <section class="row mb-3">
-            <figure class="col-md-6">
-                <img src="https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/topic_centers/2019-8/couple-hiking-mountain-climbing-1296x728-header.jpg?w=1155&h=1528"
-                    class="Portfolio-Picture .img-fluid" alt="Hiking" />
-            </figure>
-            <figure class="col-md-6">
-                <img src="https://www.yesmagazine.org/wp-content/uploads/imports/36a0edc6dcbf4466ae71d0548f94ff43.jpg"
-                    class="Portfolio-Picture .img-fluid" alt="Cooking" />
-            </figure>
-        </section>
-        <section class="row mb-3">
-            <figure class="col-md-6">
-                <img src="https://cdn.britannica.com/93/94493-050-35524FED/Toronto.jpg" class="Portfolio-Picture .img-fluid"
-                    alt="Toronto" />
-            </figure>
-            <figure class="col-md-6">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/GameCube-Set.jpg"
-                    class="Portfolio-Picture .img-fluid" alt="Video Games" />
-            </figure>
-        </section>
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary col-12 mx-auto mt-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainNavigationSidebar" aria-expanded="false" aria-controls="mainNavigationSidebar">
+                    Main Profile
+                </button>
+                <div class="collapse" id="mainNavigationSidebar">
+                    <div class="card card-body">
+                        <a class="btn btn-primary col-12 mx-auto mt-2" href="../index.html">
+                            About Me
+                        </a>
+                        <a class="btn btn-primary col-12 mx-auto mt-2" href="./portfolio.html">
+                            Portfolio
+                        </a>
+                        <a class="btn btn-primary col-12 mx-auto mt-2" href="./contact.html">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+                <button class="btn btn-primary col-12 mx-auto mt-2 projectPortfolioButton" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#portfolioSidebar" aria-expanded="false"
+                    aria-controls="portfolioSidebar">
+                    Project Portfolio
+                </button>
+                <div class="collapse" id="portfolioSidebar">
+                    <div class="card card-body">
+                        <a class="btn btn-primary col-12 mx-auto mt-2" href="./searchProjectScreen.html">
+                            Search Bar
+                        </a>
+                        <div class="div">
+                            Most Recent Searches:
+                        </div>
+                        <div class="recentSearchesButtonsList">
+                            <!-- <a class="btn btn-primary col-12 mx-auto mt-2"
+                                href="https://anzelcapparelli.github.io/marvelHeroFinder/">
+                                Marvel Hero Finder
+                            </a> -->
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary col-12 mx-auto mt-2" type="button">Resume</button>
+            </div>
+            <div class="col-md-8 searchProjectPanel">
+                <main class="row">
+                    <main class="col-md-12">
+                        <h1>
+                            Portfolio
+                        </h1>
+                    </main>
+                </main>
+                <section class="row mb-3">
+                    <figure class="col-md-6">
+                        <img src="./Cat_Picture.jpg" class="Portfolio-Picture .img-fluid" alt="My Cat" />
+                    </figure>
+                    <figure class="col-md-6">
+                        <img src="https://i2.wp.com/www.geoawesomeness.com/wp-content/uploads/2017/09/Coding-Geospatial.jpg?resize=1152%2C768&ssl=1"
+                            class="Portfolio-Picture .img-fluid" alt="Coding" />
+                    </figure>
+                </section>
+                <section class="row mb-3">
+                    <figure class="col-md-6">
+                        <img src="https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/topic_centers/2019-8/couple-hiking-mountain-climbing-1296x728-header.jpg?w=1155&h=1528"
+                            class="Portfolio-Picture .img-fluid" alt="Hiking" />
+                    </figure>
+                    <figure class="col-md-6">
+                        <img src="https://www.yesmagazine.org/wp-content/uploads/imports/36a0edc6dcbf4466ae71d0548f94ff43.jpg"
+                            class="Portfolio-Picture .img-fluid" alt="Cooking" />
+                    </figure>
+                </section>
+                <section class="row mb-3">
+                    <figure class="col-md-6">
+                        <img src="https://cdn.britannica.com/93/94493-050-35524FED/Toronto.jpg"
+                            class="Portfolio-Picture .img-fluid" alt="Toronto" />
+                    </figure>
+                    <figure class="col-md-6">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/GameCube-Set.jpg"
+                            class="Portfolio-Picture .img-fluid" alt="Video Games" />
+                    </figure>
+                </section>
+            </div>
+        </div>
     </main>
 
     <!-- footer containing links to social media pages-->
@@ -97,12 +143,13 @@
     </nav>
 
     <!-- Javascript that is used for nav toggle-->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-        crossorigin="anonymous"></script>
+    <script src="./vendor/jquery-ui.min.js"></script>
+    <script src="./searchProjectScreen.js"></script>
 </body>
 
 </html>
