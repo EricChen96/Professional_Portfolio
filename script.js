@@ -3,17 +3,23 @@ $(function () {
         {
             title: "Marvel Hero Finder",
             description: "Search up your favorite Marvel character!",
-            link: "https://anzelcapparelli.github.io/marvelHeroFinder/"
+            link: "https://anzelcapparelli.github.io/marvelHeroFinder/",
+            github: "https://github.com/anzelcapparelli/marvelHeroFinder",
+            image: "./Assets/Marvel_Screenshot.jpg"
         },
         {
             title: "Weather Dashboard",
             description: "Find out the weather of a city!",
-            link: "https://ericchen96.github.io/Weather_Dashboard/"
+            link: "https://ericchen96.github.io/Weather_Dashboard/",
+            github: "https://github.com/EricChen96/Weather_Dashboard",
+            image: "./Assets/Weather_Dashboard_Screenshot.png"
         },
         {
             title: "Code Quiz",
             description: "Play a quick code quiz game to refresh your Javascript knowledge!",
-            link: "https://ericchen96.github.io/Code_Quiz/"
+            link: "https://ericchen96.github.io/Code_Quiz/",
+            github: "https://github.com/EricChen96/Code_Quiz",
+            image: "./Assets/Code_Quiz_Screenshot.png"
         }
     ];
     var projectSearchList = ["Marvel Hero Finder", "Weather Dashboard", "Code Quiz"];
@@ -41,12 +47,12 @@ $(function () {
         var storedProjectButtons = JSON.parse(sessionStorage.getItem("projectHistory"));
         if (storedProjectButtons !== null) {
             projectSearchHistory = storedProjectButtons;
+            createProjectHistoryButtons();
         }
         var storedLastSearched = sessionStorage.getItem("lastSearched");
-        if (storedProjectButtons !== null) {
-            projectSearchHistory = storedProjectButtons;
+        if (storedLastSearched !== null) {
+            lastSearched = storedLastSearched;
         }
-        createProjectHistoryButtons();
     }
 
     function saveLastSearched(project) {

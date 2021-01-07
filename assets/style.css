@@ -49,3 +49,8 @@
     .bg-light {
         background-color: #436e98!important;
     }
+
+    .projectScreenshotPanel {
+        width: 100%;
+        /* height: auto; */
+    }
