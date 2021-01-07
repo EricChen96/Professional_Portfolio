@@ -1,10 +1,10 @@
 # Professional_Portfolio
 
-![Marvel Character Finder](./Images/mainScreenshot.jpg)
-![Marvel Character Finder](./Images/mainScreenshotPart2.jpg)
+![Marvel Character Finder](./assets/Main_Page_Screenshot.jpg)
+![Marvel Character Finder](./assets/Project_Page_Screenshot.png)
 
-[Link to site](https://anzelcapparelli.github.io/marvelHeroFinder/) <br>
-[Link to Github repository](https://github.com/anzelcapparelli/marvelHeroFinder/) <br>
+[Link to site](https://ericchen96.github.io/Professional_Portfolio/) <br>
+[Link to Github repository](https://github.com/EricChen96/Professional_Portfolio) <br>
 
 ## Installation
 
