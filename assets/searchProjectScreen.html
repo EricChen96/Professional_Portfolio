@@ -74,10 +74,10 @@
                             Most Recent Searches:
                         </div>
                         <div class="recentSearchesButtonsList">
-                            <a class="btn btn-primary col-12 mx-auto mt-2"
+                            <!-- <a class="btn btn-primary col-12 mx-auto mt-2"
                                 href="https://anzelcapparelli.github.io/marvelHeroFinder/">
                                 Marvel Hero Finder
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                 </div>
@@ -91,9 +91,14 @@
                             <input type="text" class="form-control form-control-lg projectSearchBar" id="projectInput"
                                 placeholder="Marvel Hero Finder...">
                         </section>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </section>
-                    <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+                <div class="projectDisplayPanel mt-3">
+                    <div class="projectTitlePanel"></div>
+                    <div class="projectDescriptionPanel"></div>
+                    <a class="projectLinkPanel" href=""></a>
+                </div>
             </div>
             <div class="col-md-2">
                 Hi
@@ -128,7 +133,7 @@
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
     <script src="./vendor/jquery-ui.min.js"></script>
-    <script src="../script.js"></script>
+    <script src="./searchProjectScreen.js"></script>
 </body>
 
 </html>

@@ -24,12 +24,24 @@ $(function () {
     }
     var projectSearchHistory = [];
 
+    $(".projectSearchBar").autocomplete({
+        source: projectSearchListCapital,
+        autoFocus: true
+    });
+
+    function changeProjectDisplay(searchInput) {
+        var indexTarget = projectSearchList.indexOf(searchInput);
+        $(".projectTitlePanel").text(projectList[indexTarget].title);
+        $(".projectDescriptionPanel").text(projectList[indexTarget].description);
+        $(".projectLinkPanel").text(projectList[indexTarget].link).attr("href", projectList[indexTarget].link);
+    }
+
     function createProjectHistoryButtons() {
         $(".recentSearchesButtonsList").empty();    
         for (var i = 0; i < projectSearchHistory.length; i++) {
             var projectButton = $("<a>").text(projectSearchHistory[i]);
             projectButton.attr("class","btn btn-primary col-12 mx-auto mt-2 searchHistoryButtons");
-            projectButton.attr("href","./assets/searchProjectScreen.html");
+            // projectButton.attr("href","./searchProjectScreen.html");
             $(".recentSearchesButtonsList").prepend(projectButton);
         }
     }
@@ -44,7 +56,11 @@ $(function () {
         createProjectHistoryButtons();
     }
 
-    $(".recentSearchesButtonsList").on("click",)
+    $(".recentSearchesButtonsList").on("click", ".searchHistoryButtons", function() {
+        // changeProjectDisplay($(this));
+        changeProjectDisplay($(this).text().toLowerCase());
+    })
+
 
     $(".projectSearchForm").on("submit", function (event) {
         event.preventDefault();
